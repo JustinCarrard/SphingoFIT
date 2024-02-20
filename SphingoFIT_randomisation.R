@@ -13,7 +13,7 @@ library(randomizeR)
 # Set up parameters for randomization
 #------------------------------------------------------------------------------------------
 
-# Total number of participans
+# Total number of participants
 
 N <- 100
 
@@ -31,7 +31,7 @@ N_per_group <- N/4
 
 #------------------------------------------------------------------------------------------
 # Randomized permuted block randomization with block sizes 2, 4, 6
-# Ranodmization is stratified by age (40-49, 50-60) and sex (male, female)
+# Randomization is stratified by age (40-49, 50-60) and sex (male, female)
 #------------------------------------------------------------------------------------------
 
 # Block sizes
@@ -64,6 +64,6 @@ list_female_50_60 <- getRandList(mySeq_female_50_60)
 final_list <- data.frame(
   group = c(list_male_40_49, list_male_50_60, list_female_40_49, list_female_50_60)
   , sex = rep(c("m", "f"), each = N/2)
-  , ages = rep(c("40-49", "50-60"), each = N/4, times = K)
+  , ages = rep(c("40-49", "50-60"), times = N/4)
 )
 
